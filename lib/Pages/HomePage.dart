@@ -1,5 +1,7 @@
 // ignore_for_file: file_names, unused_import
 
+import 'package:flamefinder/Pages/HomePageContent.dart';
+import 'package:flamefinder/Pages/Login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -84,7 +86,12 @@ class _HomePageState extends State<HomePage> {
                         fontStyle: FontStyle.normal,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Login()),
+                      );
+                    },
                     child: Row(
                       children: [
                         Image.asset(
@@ -122,7 +129,13 @@ class _HomePageState extends State<HomePage> {
                         fontStyle: FontStyle.normal,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomePageContent()),
+                      );
+                    },
                     child: Row(
                       children: [
                         Image.asset(

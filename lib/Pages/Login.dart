@@ -1,5 +1,6 @@
 // ignore_for_file: file_names, unused_import
 
+import 'package:flamefinder/Pages/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import '../firebase_options.dart';
@@ -161,7 +162,11 @@ class _LoginState extends State<Login> {
                               icon: const Icon(Icons.arrow_back),
                               color: Colors.white,
                               onPressed: () {
-                                // Add onPressed function here
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const HomePage()),
+                                );
                               },
                             ),
                             Expanded(

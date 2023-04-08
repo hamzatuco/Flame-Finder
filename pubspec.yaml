@@ -14,7 +14,9 @@ dependencies:
   firebase_core:
   google_fonts:
   lottie:
+  flutter_grid_button:
   firebase_auth:
+  flutter_svg:
 
 dev_dependencies:
   flutter_test:
@@ -26,4 +28,9 @@ flutter:
   assets:
     - assets/pozadina.jpg
     - assets/google.png
+    - assets/pozadinamain.jpg
     - assets/email.png
+    - assets/historija.png
+    - assets/historija.svg
+    - assets/sprijecit.png
+    - assets/pozar.png
