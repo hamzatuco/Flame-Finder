@@ -1,5 +1,4 @@
 import 'package:flamefinder/Pages/HomePage.dart';
-import 'package:flamefinder/Pages/HomePageContent.dart';
 import 'package:flutter/material.dart';
 
 void main() {

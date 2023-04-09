@@ -1,6 +1,7 @@
 // ignore_for_file: file_names, unused_import
 
-import 'package:flamefinder/Pages/HomePageContent.dart';
+import 'package:flamefinder/Pages/Dashboard.dart';
+import 'package:flamefinder/Pages/Guest.dart';
 import 'package:flamefinder/Pages/Login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -74,6 +75,50 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+                const SizedBox(height: 15),
+                SizedBox(
+                  height: 65, //height of button
+                  width: 240,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      textStyle: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 17,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Guest()),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Image.asset(
+                          'assets/incognito.png',
+                          height: 29,
+                          width: 29,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20),
+                          child: Text(
+                            'Gost prijava',
+                            textAlign: TextAlign.center,
+                            overflow: TextOverflow.ellipsis,
+                            style: GoogleFonts.poppins(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 15),
                 SizedBox(
                   height: 65, //height of button
                   width: 240,
@@ -133,7 +178,7 @@ class _HomePageState extends State<HomePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const HomePageContent()),
+                            builder: (context) => const Dashboard()),
                       );
                     },
                     child: Row(

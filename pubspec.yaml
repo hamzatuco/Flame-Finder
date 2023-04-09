@@ -13,10 +13,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core:
   google_fonts:
-  lottie:
-  flutter_grid_button:
   firebase_auth:
-  flutter_svg:
+  fluttertoast: ^8.2.1
 
 dev_dependencies:
   flutter_test:
@@ -30,7 +28,12 @@ flutter:
     - assets/google.png
     - assets/pozadinamain.jpg
     - assets/email.png
+    - assets/lock.gif
     - assets/historija.png
-    - assets/historija.svg
+    - assets/incognito.png
     - assets/sprijecit.png
     - assets/pozar.png
+    - assets/vatrogasac.png
+    - assets/vijesti.png
+    - assets/volonter.png
+    - assets/vatra.gif

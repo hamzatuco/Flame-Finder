@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import '../firebase_options.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class Login extends StatefulWidget {
@@ -157,7 +156,7 @@ class _LoginState extends State<Login> {
                         color: const Color(0xFF1e1d25),
                         child: Row(
                           children: [
-                            const SizedBox(width: 20),
+                            const SizedBox(width: 10),
                             IconButton(
                               icon: const Icon(Icons.arrow_back),
                               color: Colors.white,
@@ -171,13 +170,17 @@ class _LoginState extends State<Login> {
                             ),
                             Expanded(
                               child: Center(
-                                child: Text(
-                                  'PRIJAVITE SE POMOĆU EMAIL-A',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.poppins(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600),
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                                  child: Text(
+                                    'PRIJAVITE SE POMOĆU EMAIL-A',
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.poppins(
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600),
+                                  ),
                                 ),
                               ),
                             ),
