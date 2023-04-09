@@ -1,4 +1,5 @@
 // ignore_for_file: use_key_in_widget_constructors, file_names, avoid_print
+import 'package:flamefinder/Pages/HomePage.dart';
 import 'package:flamefinder/Pages/Login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -60,7 +61,8 @@ class _GuestState extends State<Guest> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Login()),
+                        MaterialPageRoute(
+                            builder: (context) => const HomePage()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -169,7 +171,7 @@ class _GuestState extends State<Guest> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const Login()),
+                                  builder: (context) => const HomePage()),
                             );
                           },
                           style: TextButton.styleFrom(
