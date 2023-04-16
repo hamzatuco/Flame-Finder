@@ -14,7 +14,8 @@ dependencies:
   firebase_core:
   google_fonts:
   firebase_auth:
-  fluttertoast: ^8.2.1
+  fluttertoast:
+  lottie:
 
 dev_dependencies:
   flutter_test:

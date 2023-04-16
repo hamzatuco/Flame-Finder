@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, file_names, avoid_print
 import 'package:flamefinder/Pages/HomePage.dart';
 import 'package:flamefinder/Pages/Login.dart';
+import 'package:flamefinder/Pages/PozarReport.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -117,7 +118,12 @@ class _GuestState extends State<Guest> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xfffc6400),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Pozar()),
+                      );
+                    },
                     child: Row(
                       children: [
                         const Padding(
