@@ -2,19 +2,20 @@
 import 'package:flamefinder/Pages/Dashboard.dart';
 import 'package:flamefinder/Pages/Guest.dart';
 import 'package:flamefinder/Pages/Login.dart';
+import 'package:flamefinder/Pages/Upute.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class Pozar extends StatefulWidget {
-  const Pozar({super.key});
+class PozarSplash extends StatefulWidget {
+  const PozarSplash({super.key});
 
   @override
-  State<Pozar> createState() => _PozarState();
+  State<PozarSplash> createState() => _PozarSplashState();
 }
 
-class _PozarState extends State<Pozar> {
+class _PozarSplashState extends State<PozarSplash> {
   bool _isChecked = false;
 
   @override
@@ -99,13 +100,22 @@ class _PozarState extends State<Pozar> {
 
                         Padding(
                           padding: const EdgeInsets.only(top: 15),
-                          child: Text(
-                            'Pogledajte upute za prijavu požara',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.poppins(
-                              color: const Color(0xfffc6400),
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600,
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Upute()),
+                              );
+                            },
+                            child: Text(
+                              'Pogledajte upute za prijavu požara',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.poppins(
+                                color: const Color(0xfffc6400),
+                                fontSize: 15,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                           ),
                         ),

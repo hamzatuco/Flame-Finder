@@ -1,5 +1,5 @@
 // ignore_for_file: use_key_in_widget_constructors, file_names, avoid_print
-import 'package:flamefinder/Pages/PozarReport.dart';
+import 'package:flamefinder/Pages/PozarSplash.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -89,7 +89,8 @@ class _DashboardState extends State<Dashboard> {
                       backgroundColor: const Color(0xfffc6400),
                     ),
                     onPressed: () {
-                      MaterialPageRoute(builder: (context) => const Pozar());
+                      MaterialPageRoute(
+                          builder: (context) => const PozarSplash());
                     },
                     child: Row(
                       children: [
