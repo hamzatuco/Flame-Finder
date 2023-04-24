@@ -50,14 +50,10 @@ class _UputeState extends State<Upute> {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(25, 30, 32, 0),
-                  child: Text(
-                    '1',
-                    style: GoogleFonts.poppins(
-                      color: const Color(0xfffc6400),
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  padding: const EdgeInsets.fromLTRB(10, 30, 5, 0),
+                  child: Image.asset(
+                    'assets/vatraupute.png',
+                    width: 75,
                   ),
                 ),
                 Expanded(
@@ -89,14 +85,10 @@ class _UputeState extends State<Upute> {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(25, 30, 25, 0),
-                  child: Text(
-                    '2',
-                    style: GoogleFonts.poppins(
-                      color: const Color(0xfffc6400),
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  padding: const EdgeInsets.fromLTRB(10, 30, 5, 0),
+                  child: Image.asset(
+                    'assets/siren.png',
+                    width: 75,
                   ),
                 ),
                 Expanded(
@@ -128,14 +120,10 @@ class _UputeState extends State<Upute> {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(25, 30, 23, 0),
-                  child: Text(
-                    '3',
-                    style: GoogleFonts.poppins(
-                      color: const Color(0xfffc6400),
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  padding: const EdgeInsets.fromLTRB(10, 30, 5, 0),
+                  child: Image.asset(
+                    'assets/lokacija.png',
+                    width: 75,
                   ),
                 ),
                 Expanded(
@@ -167,14 +155,10 @@ class _UputeState extends State<Upute> {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(25, 30, 21, 0),
-                  child: Text(
-                    '4',
-                    style: GoogleFonts.poppins(
-                      color: const Color(0xfffc6400),
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  padding: const EdgeInsets.fromLTRB(10, 30, 5, 0),
+                  child: Image.asset(
+                    'assets/opis.png',
+                    width: 75,
                   ),
                 ),
                 Expanded(
@@ -206,14 +190,10 @@ class _UputeState extends State<Upute> {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(25, 30, 22, 0),
-                  child: Text(
-                    '5',
-                    style: GoogleFonts.poppins(
-                      color: const Color(0xfffc6400),
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  padding: const EdgeInsets.fromLTRB(10, 30, 5, 0),
+                  child: Image.asset(
+                    'assets/officer.png',
+                    width: 75,
                   ),
                 ),
                 Expanded(

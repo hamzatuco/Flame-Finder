@@ -153,7 +153,8 @@ class _PozarSplashState extends State<PozarSplash> {
                                 ],
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(top: 10),
+                                padding:
+                                    const EdgeInsets.fromLTRB(0, 10, 0, 50),
                                 child: SizedBox(
                                   width: 160,
                                   height: 50,

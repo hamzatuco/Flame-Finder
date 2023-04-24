@@ -239,7 +239,7 @@ class _GuestState extends State<Guest> {
                             children: [
                               Image.asset(
                                 color: const Color(0xfffc6400),
-                                'lock.gif',
+                                'assets/lock.gif',
                                 width: 30,
                                 height: 30,
                               ),
@@ -299,7 +299,7 @@ class _GuestState extends State<Guest> {
                             children: [
                               Image.asset(
                                 color: const Color(0xfffc6400),
-                                'lock.gif',
+                                'assets/lock.gif',
                                 width: 30,
                                 height: 30,
                               ),
@@ -359,7 +359,7 @@ class _GuestState extends State<Guest> {
                             children: [
                               Image.asset(
                                 color: const Color(0xfffc6400),
-                                'lock.gif',
+                                'assets/lock.gif',
                                 width: 30,
                                 height: 30,
                               ),
@@ -426,7 +426,7 @@ class _GuestState extends State<Guest> {
                             children: [
                               Image.asset(
                                 color: const Color(0xfffc6400),
-                                'lock.gif',
+                                'assets/lock.gif',
                                 width: 30,
                                 height: 30,
                               ),
@@ -486,7 +486,7 @@ class _GuestState extends State<Guest> {
                             children: [
                               Image.asset(
                                 color: const Color(0xfffc6400),
-                                'lock.gif',
+                                'assets/lock.gif',
                                 width: 30,
                                 height: 30,
                               ),
@@ -546,7 +546,7 @@ class _GuestState extends State<Guest> {
                             children: [
                               Image.asset(
                                 color: const Color(0xfffc6400),
-                                'lock.gif',
+                                'assets/lock.gif',
                                 width: 30,
                                 height: 30,
                               ),
