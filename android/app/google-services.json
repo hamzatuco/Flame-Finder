@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "428575471709",
+    "project_id": "flamefinder-7c6eb",
+    "storage_bucket": "flamefinder-7c6eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428575471709:android:6662e050a470b195b975b4",
+        "android_client_info": {
+          "package_name": "com.example.flamefinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428575471709-kp96jjl2gmp73u6lupdjb1l3egbgsina.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyO089fajzllLbfqsg88HarzMPFwpvJzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428575471709-kp96jjl2gmp73u6lupdjb1l3egbgsina.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

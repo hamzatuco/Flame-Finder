@@ -1,0 +1,47 @@
+name: flamefinder
+description: A new Flutter project.
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.19.5 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  firebase_core:
+  google_fonts:
+  firebase_auth:
+  fluttertoast:
+  lottie:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/pozadina.jpg
+    - assets/google.png
+    - assets/pozadinamain.jpg
+    - assets/email.png
+    - assets/lock.gif
+    - assets/historija.png
+    - assets/incognito.png
+    - assets/sprijecit.png
+    - assets/pozar.png
+    - assets/vatrogasac.png
+    - assets/vijesti.png
+    - assets/volonter.png
+    - assets/vatra.gif
+    - assets/lokacija.png
+    - assets/officer.png
+    - assets/opis.png
+    - assets/siren.png
+    - assets/vatraupute.png
+    - assets/mapa.png
+    - assets/zvono.gif
