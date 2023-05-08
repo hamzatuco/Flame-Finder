@@ -27,7 +27,7 @@ class _PozarSplashState extends State<PozarSplash> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back_ios_new_rounded),
           onPressed: () {
             Navigator.pop(context); // Navigate back to previous screen
           },

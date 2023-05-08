@@ -11,11 +11,14 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  firebase_core:
   google_fonts:
   firebase_auth:
   fluttertoast:
   lottie:
+  firebase_core:
+  cloud_firestore: ^4.3.1
+  intl: ^0.18.1
+  flutter_countdown_timer: ^4.1.0
 
 dev_dependencies:
   flutter_test:
@@ -45,3 +48,9 @@ flutter:
     - assets/vatraupute.png
     - assets/mapa.png
     - assets/zvono.gif
+    - assets/alarm.png
+    - assets/hemija.png
+    - assets/kuhanje.png
+    - assets/elek.png
+    - assets/izlaz.png
+    - assets/cigar.png

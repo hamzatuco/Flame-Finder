@@ -1,8 +1,14 @@
 // ignore_for_file: file_names
 
 import 'package:flamefinder/Pages/HomePage.dart';
+import 'package:flamefinder/Pages/SplashPrijava.dart';
+import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '../firebase_options.dart';
 
 class Prijava extends StatefulWidget {
   const Prijava({Key? key}) : super(key: key);
@@ -19,6 +25,10 @@ class _PrijavaState extends State<Prijava> {
     'Veći požar',
     'Životno ugrožavajući požar',
   ];
+
+  TextEditingController imePrezimeController = TextEditingController();
+  TextEditingController ostaliDetaljiController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,6 +133,7 @@ class _PrijavaState extends State<Prijava> {
                                 color: Colors.grey[200],
                               ),
                               child: TextField(
+                                controller: imePrezimeController,
                                 decoration: InputDecoration(
                                   hintText: 'Ime i prezime',
                                   border: OutlineInputBorder(
@@ -199,6 +210,7 @@ class _PrijavaState extends State<Prijava> {
                                   color: Colors.transparent, width: 1.5),
                             ),
                             child: TextField(
+                              controller: ostaliDetaljiController,
                               style: GoogleFonts.poppins(
                                   fontWeight: FontWeight.w500),
                               decoration: InputDecoration(
@@ -228,11 +240,16 @@ class _PrijavaState extends State<Prijava> {
                                   backgroundColor: const Color(0xfffc6400),
                                 ),
                                 onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => const HomePage()),
+                                  dodajPozar(
+                                    imePrezimeController.text.trim(),
+                                    dropdownvalue.trim(),
+                                    ostaliDetaljiController.text.trim(),
                                   );
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const SplashPrijava()));
                                 },
                                 child: Row(
                                   children: [
@@ -276,5 +293,25 @@ class _PrijavaState extends State<Prijava> {
         ],
       ),
     );
+  }
+
+  Future<void> dodajPozar(
+      String imeIPrezime, String dropdownvalue, String ostaliDetalji) async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    DateTime sad = DateTime.now();
+    String datum = DateFormat.yMMMMd().format(sad);
+    String sati = DateFormat.H().format(sad);
+    await FirebaseFirestore.instance.collection('Požari').add({
+      'Ime i prezime': imeIPrezime,
+      'Veličina pozara': dropdownvalue,
+      'Ostali detalji': ostaliDetalji,
+      'X-koordinate': '44.156139',
+      'Y-koordinate': '17.785879',
+      'Datum požara': datum,
+      'Vrijeme požara': sati,
+    });
   }
 }

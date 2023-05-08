@@ -1,4 +1,9 @@
+import 'package:flamefinder/Pages/Dashboard.dart';
+import 'package:flamefinder/Pages/HomePage.dart';
+import 'package:flamefinder/Pages/PozarSplash.dart';
 import 'package:flamefinder/Pages/Prijava.dart';
+import 'package:flamefinder/Pages/SprijeciPozar.dart';
+import 'Pages/SplashPrijava.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Prijava(),
+      home: Dashboard(),
       debugShowCheckedModeBanner: false,
     );
   }
