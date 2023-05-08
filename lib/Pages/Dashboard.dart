@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, file_names, avoid_print
 import 'package:flamefinder/Pages/PozarSplash.dart';
 import 'package:flamefinder/Pages/SprijeciPozar.dart';
+import 'package:flamefinder/Pages/Volonteri.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -298,7 +299,14 @@ class _DashboardState extends State<Dashboard> {
                       child: FractionallySizedBox(
                         heightFactor: 1.0,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const Volonteri()), // Navigate to Sprijeci screen
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF1D1D25),
                             shape: RoundedRectangleBorder(

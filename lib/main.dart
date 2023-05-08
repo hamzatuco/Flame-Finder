@@ -2,7 +2,9 @@ import 'package:flamefinder/Pages/Dashboard.dart';
 import 'package:flamefinder/Pages/HomePage.dart';
 import 'package:flamefinder/Pages/PozarSplash.dart';
 import 'package:flamefinder/Pages/Prijava.dart';
+import 'package:flamefinder/Pages/SplashVolonter.dart';
 import 'package:flamefinder/Pages/SprijeciPozar.dart';
+import 'Pages/SplashVolonter.dart';
 import 'Pages/SplashPrijava.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Dashboard(),
+      home: SplashVolonter(),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -303,7 +303,7 @@ class _PrijavaState extends State<Prijava> {
     );
     DateTime sad = DateTime.now();
     String datum = DateFormat.yMMMMd().format(sad);
-    String sati = DateFormat.H().format(sad);
+    String sati = DateFormat.Hm().format(sad);
     await FirebaseFirestore.instance.collection('Požari').add({
       'Ime i prezime': imeIPrezime,
       'Veličina pozara': dropdownvalue,
