@@ -49,7 +49,7 @@ class _SplashPrijavaState extends State<SplashPrijava>
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
                   child: Text(
                     'Vatrogasne službe će pregledati Vašu prijavu i provjeriti postojanje požara, te će izaći na teren.',
                     textAlign: TextAlign.center,

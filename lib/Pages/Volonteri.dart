@@ -1,9 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, file_names, avoid_print
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flamefinder/Pages/PozarSplash.dart';
 import 'package:flamefinder/Pages/SplashVolonter.dart';
-import 'package:flamefinder/Pages/SprijeciPozar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -31,6 +29,7 @@ class _VolonteriState extends State<Volonteri> {
       maxHeight = 300;
     }
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           double maxHeight = constraints.maxHeight * 1;
@@ -45,7 +44,7 @@ class _VolonteriState extends State<Volonteri> {
                 child: ConstrainedBox(
                   constraints: BoxConstraints.expand(height: maxHeight),
                   child: Image.asset(
-                    'volonter.jpg',
+                    'assets/volonter.jpg',
                     alignment: const Alignment(0, -0.4),
                     fit: BoxFit.cover,
                   ),
@@ -70,223 +69,229 @@ class _VolonteriState extends State<Volonteri> {
                           ),
                         ),
                         builder: (BuildContext context) {
-                          return SizedBox(
-                            height: 470,
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 20),
-                                    child: Text(
-                                      'UNESITE PODATKE',
-                                      textAlign: TextAlign.center,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: GoogleFonts.poppins(
-                                        color: const Color(0xfffc6400),
-                                        fontSize: 28,
-                                        fontWeight: FontWeight.w800,
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 20),
-                                    child: Container(
-                                      height: 48,
-                                      margin: const EdgeInsets.symmetric(
-                                          horizontal: 15.0, vertical: 10.0),
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                        color: Colors.grey[200],
-                                      ),
-                                      child: TextField(
-                                        controller: imePrezimeController,
-                                        decoration: InputDecoration(
-                                          hintText: 'Ime i prezime',
-                                          border: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.5),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.5),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          contentPadding:
-                                              const EdgeInsets.symmetric(
-                                                  horizontal: 15.0,
-                                                  vertical: 10.0),
-                                        ),
+                          return SingleChildScrollView(
+                            child: SizedBox(
+                              height: 470,
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 20),
+                                      child: Text(
+                                        'UNESITE PODATKE',
+                                        textAlign: TextAlign.center,
+                                        overflow: TextOverflow.ellipsis,
                                         style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 8),
-                                    child: Container(
-                                      height: 48,
-                                      margin: const EdgeInsets.symmetric(
-                                          horizontal: 15.0, vertical: 10.0),
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                        color: Colors.grey[200],
-                                      ),
-                                      child: TextField(
-                                        controller: emailController,
-                                        decoration: InputDecoration(
-                                          hintText: 'E-mail adresa',
-                                          border: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.5),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.5),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          contentPadding:
-                                              const EdgeInsets.symmetric(
-                                                  horizontal: 15.0,
-                                                  vertical: 10.0),
+                                          color: const Color(0xfffc6400),
+                                          fontSize: 28,
+                                          fontWeight: FontWeight.w800,
                                         ),
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w500),
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 8),
-                                    child: Container(
-                                      height: 48,
-                                      margin: const EdgeInsets.symmetric(
-                                          horizontal: 15.0, vertical: 10.0),
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                        color: Colors.grey[200],
-                                      ),
-                                      child: TextField(
-                                        controller: brojController,
-                                        decoration: InputDecoration(
-                                          hintText: 'Broj telefona',
-                                          border: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.5),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.5),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          contentPadding:
-                                              const EdgeInsets.symmetric(
-                                                  horizontal: 15.0,
-                                                  vertical: 10.0),
-                                        ),
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    height: 130,
-                                    margin: const EdgeInsets.symmetric(
-                                        horizontal: 15.0, vertical: 10.0),
-                                    decoration: BoxDecoration(
-                                      color: Colors.grey[200],
-                                      borderRadius: BorderRadius.circular(10.0),
-                                      border: Border.all(
-                                          color: Colors.transparent,
-                                          width: 1.5),
-                                    ),
-                                    child: TextField(
-                                      controller: pismoController,
-                                      style: GoogleFonts.poppins(
-                                          fontWeight: FontWeight.w500),
-                                      decoration: InputDecoration(
-                                        hintText: 'Motivaciono pismo',
-                                        border: OutlineInputBorder(
-                                          borderSide: BorderSide.none,
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 20),
+                                      child: Container(
+                                        height: 48,
+                                        margin: const EdgeInsets.symmetric(
+                                            horizontal: 15.0, vertical: 10.0),
+                                        decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(10.0),
+                                          color: Colors.grey[200],
                                         ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide.none,
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
-                                        ),
-                                        contentPadding:
-                                            const EdgeInsets.symmetric(
-                                                horizontal: 15.0,
-                                                vertical: 10.0),
-                                      ),
-                                      maxLines: null,
-                                      minLines: 1,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding:
-                                        const EdgeInsets.fromLTRB(0, 10, 0, 40),
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 210,
-                                      child: ElevatedButton(
-                                        style: ElevatedButton.styleFrom(
-                                          backgroundColor:
-                                              const Color(0xfffc6400),
-                                        ),
-                                        onPressed: () {
-                                          prijava(
-                                            imePrezimeController.text.trim(),
-                                            emailController.text.trim(),
-                                            brojController.text.trim(),
-                                            pismoController.text.trim(),
-                                          );
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const SplashVolonter()));
-                                        },
-                                        child: Row(
-                                          children: [
-                                            const ImageIcon(
-                                              AssetImage('zvono.gif'),
-                                              size: 40,
+                                        child: TextField(
+                                          controller: imePrezimeController,
+                                          decoration: InputDecoration(
+                                            hintText: 'Ime i prezime',
+                                            border: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1.5),
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
                                             ),
-                                            const SizedBox(width: 10),
-                                            Text(
-                                              'PRIJAVI POŽAR!',
-                                              textAlign: TextAlign.center,
-                                              style: GoogleFonts.poppins(
-                                                color: Colors.white,
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w600,
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1.5),
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            contentPadding:
+                                                const EdgeInsets.symmetric(
+                                                    horizontal: 15.0,
+                                                    vertical: 10.0),
+                                          ),
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 8),
+                                      child: Container(
+                                        height: 48,
+                                        margin: const EdgeInsets.symmetric(
+                                            horizontal: 15.0, vertical: 10.0),
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                          color: Colors.grey[200],
+                                        ),
+                                        child: TextField(
+                                          controller: emailController,
+                                          decoration: InputDecoration(
+                                            hintText: 'E-mail adresa',
+                                            border: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1.5),
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1.5),
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            contentPadding:
+                                                const EdgeInsets.symmetric(
+                                                    horizontal: 15.0,
+                                                    vertical: 10.0),
+                                          ),
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 8),
+                                      child: Container(
+                                        height: 48,
+                                        margin: const EdgeInsets.symmetric(
+                                            horizontal: 15.0, vertical: 10.0),
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                          color: Colors.grey[200],
+                                        ),
+                                        child: TextField(
+                                          controller: brojController,
+                                          decoration: InputDecoration(
+                                            hintText: 'Broj telefona',
+                                            border: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1.5),
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1.5),
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            contentPadding:
+                                                const EdgeInsets.symmetric(
+                                                    horizontal: 15.0,
+                                                    vertical: 10.0),
+                                          ),
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 8),
+                                      child: Container(
+                                        height: 130,
+                                        margin: const EdgeInsets.symmetric(
+                                            horizontal: 15.0, vertical: 10.0),
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey[200],
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                          border: Border.all(
+                                              color: Colors.transparent,
+                                              width: 1.5),
+                                        ),
+                                        child: TextField(
+                                          controller: pismoController,
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w500),
+                                          decoration: InputDecoration(
+                                            hintText: 'Motivaciono pismo',
+                                            border: OutlineInputBorder(
+                                              borderSide: BorderSide.none,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: BorderSide.none,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            contentPadding:
+                                                const EdgeInsets.symmetric(
+                                                    horizontal: 15.0,
+                                                    vertical: 10.0),
+                                          ),
+                                          maxLines: null,
+                                          minLines: 1,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 10, 0, 40),
+                                      child: SizedBox(
+                                        height: 50,
+                                        width: 230,
+                                        child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor:
+                                                const Color(0xfffc6400),
+                                          ),
+                                          onPressed: () {
+                                            prijava(
+                                              imePrezimeController.text.trim(),
+                                              emailController.text.trim(),
+                                              brojController.text.trim(),
+                                              pismoController.text.trim(),
+                                            );
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const SplashVolonter()));
+                                          },
+                                          child: Row(
+                                            children: [
+                                              const ImageIcon(
+                                                AssetImage('assets/zvono.gif'),
+                                                size: 38,
                                               ),
-                                            ),
-                                          ],
+                                              const SizedBox(width: 10),
+                                              Text(
+                                                'POŠALJI PRIJAVU!',
+                                                textAlign: TextAlign.center,
+                                                style: GoogleFonts.poppins(
+                                                  color: Colors.white,
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           );
@@ -296,10 +301,10 @@ class _VolonteriState extends State<Volonteri> {
                     child: Row(
                       children: [
                         const Padding(
-                          padding: EdgeInsets.only(left: 15.0),
+                          padding: EdgeInsets.only(left: 10.0),
                           child: ImageIcon(
                             AssetImage('assets/volonter.png'),
-                            size: 40,
+                            size: 38,
                           ),
                         ),
                         const SizedBox(width: 15),
@@ -327,7 +332,7 @@ class _VolonteriState extends State<Volonteri> {
                   leading: IconButton(
                     icon: const Icon(
                       Icons.menu,
-                      color: const Color(0xFF24242C),
+                      color: Color(0xFF24242C),
                     ),
                     onPressed: () {
                       _scaffoldKey.currentState!.openDrawer();

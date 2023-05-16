@@ -20,10 +20,10 @@ class _UputeState extends State<Upute> {
     return Scaffold(
       backgroundColor: const Color(0xFF1D1D25),
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60),
+        preferredSize: const Size.fromHeight(60),
         child: AppBar(
           elevation: 0,
-          backgroundColor: Color.fromARGB(255, 19, 19, 24),
+          backgroundColor: const Color.fromARGB(255, 19, 19, 24),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios_new_rounded),
             onPressed: () {

@@ -2,7 +2,7 @@
 import 'package:flamefinder/Pages/Dashboard.dart';
 import 'package:flamefinder/Pages/Guest.dart';
 import 'package:flamefinder/Pages/Login.dart';
-import 'package:flamefinder/Pages/Prijava.dart';
+import 'package:flamefinder/Pages/prijava.dart';
 import 'package:flamefinder/Pages/Upute.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -129,14 +129,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.4"
-  firebase_auth:
-    dependency: "direct main"
-    description:
-      name: firebase_auth
-      sha256: "3b0a070467c98130373052f539b80efdaaa8873163087b3aa5f91d1e857d43ac"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.6.2+1"
   firebase_core:
     dependency: "direct main"
     description:

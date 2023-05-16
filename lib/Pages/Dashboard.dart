@@ -95,7 +95,7 @@ class _DashboardState extends State<Dashboard> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                PozarSplash()), // Navigate to Sprijeci screen
+                                const PozarSplash()), // Navigate to Sprijeci screen
                       );
                     },
                     child: Row(
@@ -208,7 +208,7 @@ class _DashboardState extends State<Dashboard> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      Sprijeci()), // Navigate to Sprijeci screen
+                                      const Sprijeci()), // Navigate to Sprijeci screen
                             );
                           },
                           style: ElevatedButton.styleFrom(
