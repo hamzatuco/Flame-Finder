@@ -1,4 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, file_names, avoid_print
+import 'dart:ui';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flamefinder/Pages/SplashVolonter.dart';
@@ -38,16 +40,26 @@ class _VolonteriState extends State<Volonteri> {
           }
           return Stack(
             children: [
-              FractionallySizedBox(
-                widthFactor: 1.0,
-                heightFactor: 1,
-                child: ConstrainedBox(
-                  constraints: BoxConstraints.expand(height: maxHeight),
-                  child: Image.asset(
-                    'assets/volonter.jpg',
-                    alignment: const Alignment(0, -0.4),
-                    fit: BoxFit.cover,
-                  ),
+              Container(
+                width:
+                    double.infinity, // Ensures the image fills the entire width
+                height: maxHeight, // Set the desired height
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Image.asset(
+                      'assets/volonter.jpg',
+                      fit: BoxFit.cover,
+                    ),
+                    ImageFiltered(
+                      imageFilter: ImageFilter.blur(
+                          sigmaX: 1.5, sigmaY: 1.5), // Adjust blur intensity
+                      child: Image.asset(
+                        'assets/volonter.jpg',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Center(
@@ -332,7 +344,7 @@ class _VolonteriState extends State<Volonteri> {
                   leading: IconButton(
                     icon: const Icon(
                       Icons.menu,
-                      color: Color(0xFF24242C),
+                      color: Colors.white,
                     ),
                     onPressed: () {
                       _scaffoldKey.currentState!.openDrawer();
@@ -342,7 +354,7 @@ class _VolonteriState extends State<Volonteri> {
                     'FLAME FINDER',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
-                        color: const Color(0xFF24242C),
+                        color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.w700),
                   ),
