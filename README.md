@@ -10,4 +10,4 @@ Koristeći Flame Finder, korisnici mogu doprinijeti prevenciji požara i smanjen
 
 Nadamo se da će Flame Finder biti koristan i da će doprinijeti boljoj zaštiti od požara.
 
-<img src="https://user-images.githubusercontent.com/59146488/259889156-638906fb-f397-411a-a314-f2cb558797f7.png">
+<img width="300" src="https://user-images.githubusercontent.com/59146488/259889156-638906fb-f397-411a-a314-f2cb558797f7.png">
