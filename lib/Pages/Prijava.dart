@@ -103,42 +103,78 @@ class _PrijavaState extends State<Prijava> {
                   ),
                   builder: (BuildContext context) {
                     return SingleChildScrollView(
-                      physics: const NeverScrollableScrollPhysics(),
-                      child: SizedBox(
-                        height: 470,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 20),
-                              child: Text(
-                                'UNESITE PODATKE',
-                                textAlign: TextAlign.center,
-                                overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.poppins(
-                                  color: const Color(0xfffc6400),
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w800,
+                      child: Container(
+                        padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).viewInsets.bottom,
+                        ),
+                        child: SizedBox(
+                          height: 470,
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 20),
+                                child: Text(
+                                  'UNESITE PODATKE',
+                                  textAlign: TextAlign.center,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: GoogleFonts.poppins(
+                                    color: const Color(0xfffc6400),
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.w800,
+                                  ),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 20),
-                              child: Container(
-                                height: 48,
+                              Padding(
+                                padding: const EdgeInsets.only(top: 20),
+                                child: Container(
+                                  height: 48,
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 15.0, vertical: 10.0),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                    color: Colors.grey[200],
+                                  ),
+                                  child: TextField(
+                                    controller: imePrezimeController,
+                                    decoration: InputDecoration(
+                                      hintText: 'Ime i prezime',
+                                      border: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.5),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.5),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      contentPadding:
+                                          const EdgeInsets.symmetric(
+                                              horizontal: 15.0, vertical: 10.0),
+                                    ),
+                                    style: GoogleFonts.poppins(
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                height: 58,
                                 margin: const EdgeInsets.symmetric(
                                     horizontal: 15.0, vertical: 10.0),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.0),
                                   color: Colors.grey[200],
                                 ),
-                                child: TextField(
-                                  controller: imePrezimeController,
+                                child: DropdownButtonFormField(
                                   decoration: InputDecoration(
-                                    hintText: 'Ime i prezime',
-                                    border: OutlineInputBorder(
+                                    border: InputBorder.none,
+                                    enabledBorder: OutlineInputBorder(
                                       borderSide: const BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.5),
+                                          color: Colors.transparent, width: 1),
                                       borderRadius: BorderRadius.circular(10.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
@@ -147,131 +183,103 @@ class _PrijavaState extends State<Prijava> {
                                           width: 1.5),
                                       borderRadius: BorderRadius.circular(10.0),
                                     ),
-                                    contentPadding: const EdgeInsets.symmetric(
-                                        horizontal: 15.0, vertical: 10.0),
                                   ),
+                                  value: dropdownvalue,
+                                  icon: const Icon(Icons.keyboard_arrow_down),
+                                  items: items.map((String items) {
+                                    return DropdownMenuItem(
+                                      value: items,
+                                      child: Text(
+                                        items,
+                                        style: const TextStyle(
+                                            fontSize: 15, color: Colors.black),
+                                      ),
+                                    );
+                                  }).toList(),
+                                  onChanged: (String? newValue) {
+                                    setState(() {
+                                      dropdownvalue = newValue!;
+                                    });
+                                  },
                                   style: GoogleFonts.poppins(
                                       fontWeight: FontWeight.w500),
                                 ),
                               ),
-                            ),
-                            Container(
-                              height: 58,
-                              margin: const EdgeInsets.symmetric(
-                                  horizontal: 15.0, vertical: 10.0),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                color: Colors.grey[200],
-                              ),
-                              child: DropdownButtonFormField(
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.transparent, width: 1),
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.transparent, width: 1.5),
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
+                              Container(
+                                height: 130,
+                                margin: const EdgeInsets.symmetric(
+                                    horizontal: 15.0, vertical: 10.0),
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[200],
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  border: Border.all(
+                                      color: Colors.transparent, width: 1.5),
                                 ),
-                                value: dropdownvalue,
-                                icon: const Icon(Icons.keyboard_arrow_down),
-                                items: items.map((String items) {
-                                  return DropdownMenuItem(
-                                    value: items,
-                                    child: Text(
-                                      items,
-                                      style: const TextStyle(
-                                          fontSize: 15, color: Colors.black),
+                                child: TextField(
+                                  controller: ostaliDetaljiController,
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w500),
+                                  decoration: InputDecoration(
+                                    hintText: 'Ostali detalji',
+                                    border: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                      borderRadius: BorderRadius.circular(10.0),
                                     ),
-                                  );
-                                }).toList(),
-                                onChanged: (String? newValue) {
-                                  setState(() {
-                                    dropdownvalue = newValue!;
-                                  });
-                                },
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                            Container(
-                              height: 130,
-                              margin: const EdgeInsets.symmetric(
-                                  horizontal: 15.0, vertical: 10.0),
-                              decoration: BoxDecoration(
-                                color: Colors.grey[200],
-                                borderRadius: BorderRadius.circular(10.0),
-                                border: Border.all(
-                                    color: Colors.transparent, width: 1.5),
-                              ),
-                              child: TextField(
-                                controller: ostaliDetaljiController,
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w500),
-                                decoration: InputDecoration(
-                                  hintText: 'Ostali detalji',
-                                  border: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.circular(10.0),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        horizontal: 15.0, vertical: 10.0),
                                   ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide.none,
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  contentPadding: const EdgeInsets.symmetric(
-                                      horizontal: 15.0, vertical: 10.0),
+                                  maxLines: null,
+                                  minLines: 1,
                                 ),
-                                maxLines: null,
-                                minLines: 1,
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 10),
-                              child: SizedBox(
-                                height: 50,
-                                width: 210,
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: const Color(0xfffc6400),
-                                  ),
-                                  onPressed: () {
-                                    dodajPozar(
-                                      imePrezimeController.text.trim(),
-                                      dropdownvalue.trim(),
-                                      ostaliDetaljiController.text.trim(),
-                                    );
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const SplashPrijava()));
-                                  },
-                                  child: Row(
-                                    children: [
-                                      const ImageIcon(
-                                        AssetImage('assets/zvono.gif'),
-                                        size: 35,
-                                      ),
-                                      const SizedBox(width: 10),
-                                      Text(
-                                        'PRIJAVI POŽAR!',
-                                        textAlign: TextAlign.center,
-                                        style: GoogleFonts.poppins(
-                                          color: Colors.white,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600,
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: SizedBox(
+                                  height: 50,
+                                  width: 210,
+                                  child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: const Color(0xfffc6400),
+                                    ),
+                                    onPressed: () {
+                                      dodajPozar(
+                                        imePrezimeController.text.trim(),
+                                        dropdownvalue.trim(),
+                                        ostaliDetaljiController.text.trim(),
+                                      );
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const SplashPrijava()));
+                                    },
+                                    child: Row(
+                                      children: [
+                                        const ImageIcon(
+                                          AssetImage('assets/zvono.gif'),
+                                          size: 35,
                                         ),
-                                      ),
-                                    ],
+                                        const SizedBox(width: 10),
+                                        Text(
+                                          'PRIJAVI POŽAR!',
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.poppins(
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     );
