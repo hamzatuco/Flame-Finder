@@ -1,4 +1,3 @@
-import 'package:flamefinder/Pages/Dashboard.dart';
 import 'package:flamefinder/Pages/HomePage.dart';
 import 'package:flutter/material.dart';
 

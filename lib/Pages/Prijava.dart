@@ -1,10 +1,11 @@
+// ignore_for_file: file_names
+
 import 'package:flamefinder/Pages/SplashPrijava.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 import '../firebase_options.dart';
 
 class Prijava extends StatefulWidget {

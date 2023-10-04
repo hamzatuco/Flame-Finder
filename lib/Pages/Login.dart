@@ -77,10 +77,10 @@ class _LoginState extends State<Login> {
                 color: const Color(0xFF22222c),
                 child: Stack(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 100, 10, 0),
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(10, 100, 10, 0),
                       child: Column(
-                        children: const [
+                        children: [
                           TextField(
                             decoration: InputDecoration(
                               labelText: 'Email',

@@ -40,7 +40,7 @@ class _VolonteriState extends State<Volonteri> {
           }
           return Stack(
             children: [
-              Container(
+              SizedBox(
                 width:
                     double.infinity, // Ensures the image fills the entire width
                 height: maxHeight, // Set the desired height

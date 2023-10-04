@@ -69,9 +69,9 @@ class _GuestState extends State<Guest> {
                       backgroundColor: const Color(0xfffc6400),
                       elevation: 0,
                     ),
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      children: [
                         Icon(Icons.person),
                         SizedBox(width: 8),
                         Text(
