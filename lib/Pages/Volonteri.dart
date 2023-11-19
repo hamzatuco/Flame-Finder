@@ -18,7 +18,6 @@ class Volonteri extends StatefulWidget {
 }
 
 class _VolonteriState extends State<Volonteri> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController imePrezimeController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController brojController = TextEditingController();
@@ -83,7 +82,7 @@ class _VolonteriState extends State<Volonteri> {
                         builder: (BuildContext context) {
                           return SingleChildScrollView(
                             child: SizedBox(
-                              height: 470,
+                              height: 540,
                               child: SingleChildScrollView(
                                 child: Column(
                                   children: [
@@ -343,11 +342,11 @@ class _VolonteriState extends State<Volonteri> {
                   elevation: 0,
                   leading: IconButton(
                     icon: const Icon(
-                      Icons.menu,
+                      Icons.arrow_back_ios_new,
                       color: Colors.white,
                     ),
                     onPressed: () {
-                      _scaffoldKey.currentState!.openDrawer();
+                      Navigator.pop(context);
                     },
                   ),
                   title: Text(

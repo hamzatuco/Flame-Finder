@@ -313,14 +313,15 @@ class _PrijavaState extends State<Prijava> {
     DateTime sad = DateTime.now();
     String datum = DateFormat.yMMMMd().format(sad);
     String sati = DateFormat.Hm().format(sad);
-    await FirebaseFirestore.instance.collection('Požari').add({
+    await FirebaseFirestore.instance.collection('Pozari').add({
       'Ime i prezime': imeIPrezime,
       'Veličina pozara': dropdownvalue,
       'Ostali detalji': ostaliDetalji,
       'X-koordinate': '44.156139',
       'Y-koordinate': '17.785879',
-      'Datum požara': datum,
-      'Vrijeme požara': sati,
+      'Datum_pozara': datum,
+      'Vrijeme_pozara': sati,
+      'Status': 'Nepotvrđeno'
     });
   }
 }

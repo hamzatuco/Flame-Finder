@@ -1,4 +1,6 @@
-// ignore_for_file: use_key_in_widget_constructors, file_names, avoid_print
+// ignore_for_file: file_names, use_key_in_widget_constructors
+
+import 'package:flamefinder/Pages/Historija.dart';
 import 'package:flamefinder/Pages/PozarSplash.dart';
 import 'package:flamefinder/Pages/SprijeciPozar.dart';
 import 'package:flamefinder/Pages/Volonteri.dart';
@@ -162,7 +164,14 @@ class _DashboardState extends State<Dashboard> {
                       child: FractionallySizedBox(
                         heightFactor: 1.0,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      Historija()), // Navigate to Sprijeci screen
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF1D1D25),
                             shape: RoundedRectangleBorder(
