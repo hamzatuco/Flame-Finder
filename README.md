@@ -9,3 +9,20 @@ Koristeći Flame Finder, korisnici mogu doprinijeti prevenciji požara i smanjen
 <b>Važno je naglasiti da Flame Finder ne zamjenjuje profesionalne službe za gašenje požara, te da je prije svega namijenjen kao alat za podršku korisnicima u ranoj fazi požara. U slučaju hitne situacije, uvijek treba pozvati nadležne službe za hitne intervencije.</b>
 
 Nadamo se da će Flame Finder biti koristan i da će doprinijeti boljoj zaštiti od požara.
+
+<h1>Screenshots</h1>
+<hr>
+
+<img width="300" src="https://user-images.githubusercontent.com/59146488/259889156-638906fb-f397-411a-a314-f2cb558797f7.png">
+
+<img width="300" src="https://user-images.githubusercontent.com/59146488/259889167-bf30334e-b746-461d-a509-c6ed526cb79b.png">
+
+<img width="300" src="https://user-images.githubusercontent.com/59146488/259889170-8e6abfb5-1b25-4a9f-98bb-f55206a4d5c7.png">
+
+<img width="300" src="https://user-images.githubusercontent.com/59146488/259889179-a62ef236-cbc9-4287-ac90-1d4a347e5d1a.png">
+
+<img width="300" src="https://user-images.githubusercontent.com/59146488/259889181-ce5dfdcc-5f9f-4d44-8b66-47a1950cd1c5.png">
+
+
+
+
